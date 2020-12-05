@@ -16,28 +16,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEY-hK-Ocs">
-                                <rect key="frame" x="167" y="243" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="linkColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zhb-Ai-DiA">
+                                <rect key="frame" x="50" y="85" width="314" height="157"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="157" id="QV2-Bb-KJa"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XOd-6Z-ssf">
+                                <rect key="frame" x="45" y="272" width="112" height="35"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Fetch Image"/>
+                                <connections>
+                                    <action selector="fetchImage:" destination="jTA-1K-dfv" eventType="touchUpInside" id="Lgp-gC-Lb6"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Bc-La-8Mk">
+                                <rect key="frame" x="20" y="342" width="374" height="500"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9P-nd-GBk">
+                                <rect key="frame" x="264" y="272" width="105" height="35"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Grab Image"/>
+                                <connections>
+                                    <action selector="fetchImage:" destination="jTA-1K-dfv" eventType="touchUpInside" id="Hg6-69-pyG"/>
+                                    <action selector="grabImage:" destination="jTA-1K-dfv" eventType="touchUpInside" id="nl5-E3-gBQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wk6-UF-mQR"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <constraints>
+                            <constraint firstItem="XOd-6Z-ssf" firstAttribute="leading" secondItem="wk6-UF-mQR" secondAttribute="leading" constant="45" id="5QH-sz-I7k"/>
+                            <constraint firstItem="wk6-UF-mQR" firstAttribute="trailing" secondItem="Zhb-Ai-DiA" secondAttribute="trailing" constant="50" id="5vc-AC-zXX"/>
+                            <constraint firstItem="3Bc-La-8Mk" firstAttribute="leading" secondItem="wk6-UF-mQR" secondAttribute="leading" constant="20" id="HFB-b3-9u4"/>
+                            <constraint firstItem="Zhb-Ai-DiA" firstAttribute="leading" secondItem="wk6-UF-mQR" secondAttribute="leading" constant="50" id="VaN-Pt-Fsw"/>
+                            <constraint firstItem="s9P-nd-GBk" firstAttribute="top" secondItem="Zhb-Ai-DiA" secondAttribute="bottom" constant="30" id="XBS-yC-5uw"/>
+                            <constraint firstItem="wk6-UF-mQR" firstAttribute="trailing" secondItem="3Bc-La-8Mk" secondAttribute="trailing" constant="20" id="Ygj-ZM-ZUl"/>
+                            <constraint firstItem="Zhb-Ai-DiA" firstAttribute="top" secondItem="wk6-UF-mQR" secondAttribute="top" constant="41" id="ZBa-gH-pFr"/>
+                            <constraint firstItem="wk6-UF-mQR" firstAttribute="trailing" secondItem="s9P-nd-GBk" secondAttribute="trailing" constant="45" id="m4z-SQ-g5E"/>
+                            <constraint firstItem="XOd-6Z-ssf" firstAttribute="top" secondItem="Zhb-Ai-DiA" secondAttribute="bottom" constant="30" id="oZV-3E-0RO"/>
+                            <constraint firstItem="wk6-UF-mQR" firstAttribute="bottom" secondItem="3Bc-La-8Mk" secondAttribute="bottom" constant="20" id="ubb-Os-CPx"/>
+                            <constraint firstItem="3Bc-La-8Mk" firstAttribute="top" secondItem="Zhb-Ai-DiA" secondAttribute="bottom" constant="100" id="wta-qm-QSu"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="image" destination="Zhb-Ai-DiA" id="uER-NH-qL8"/>
+                        <outlet property="label" destination="3Bc-La-8Mk" id="0db-Qj-zPY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yr4-9c-97K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="367" y="-50"/>
+            <point key="canvasLocation" x="366.66666666666669" y="-50.223214285714285"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
