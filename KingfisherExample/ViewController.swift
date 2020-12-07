@@ -11,13 +11,14 @@ import Kingfisher
 class ViewController: UIViewController {
     
     
-    @IBOutlet var image: UIImageView!
+    @IBOutlet var mainImage: UIImageView!
     @IBOutlet var label: UILabel!
     
     let urlImage = "https://unsplash.com/photos/TIMCZe9JghI/download?force=true&w=640"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     
@@ -29,6 +30,7 @@ class ViewController: UIViewController {
             switch result {
             case .success(let retrieveImageResult):
                 let image = retrieveImageResult.image
+                self.mainImage.image = image
                 let cacheType = retrieveImageResult.cacheType
                 let source = retrieveImageResult.source
                 let originalSource = retrieveImageResult.originalSource
@@ -61,10 +63,10 @@ class ViewController: UIViewController {
         let resource = ImageResource(downloadURL: downloadURL)
         let placeholder = UIImage(named: "logo")
         let processor = RoundCornerImageProcessor(cornerRadius: 200)
-        image.kf.indicatorType = .activity
-        image.kf.setImage(with: resource, placeholder: placeholder, options: [.processor(processor)]) { (receivedSize, totalSize) in
+        mainImage.kf.indicatorType = .activity
+        mainImage.kf.setImage(with: resource, placeholder: placeholder, options: [.processor(processor)]) { (receivedSize, totalSize) in
             let percentage = (Float(receivedSize) / Float(totalSize)) * 100.0
-            print("downloading progress: \(percentage)%")
+            print("Downloading progress: \(percentage)%")
         } completionHandler: { result in
             switch result {
             case .success(let retrieveImageResult):
@@ -94,5 +96,4 @@ class ViewController: UIViewController {
             }
         }
     }
-    
 }

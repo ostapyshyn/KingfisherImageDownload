@@ -29,7 +29,7 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Fetch Image"/>
                                 <connections>
-                                    <action selector="fetchImage:" destination="jTA-1K-dfv" eventType="touchUpInside" id="Lgp-gC-Lb6"/>
+                                    <action selector="fetchImage:" destination="jTA-1K-dfv" eventType="touchUpInside" id="Gqh-3O-XjK"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Bc-La-8Mk">
@@ -44,8 +44,7 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Grab Image"/>
                                 <connections>
-                                    <action selector="fetchImage:" destination="jTA-1K-dfv" eventType="touchUpInside" id="Hg6-69-pyG"/>
-                                    <action selector="grabImage:" destination="jTA-1K-dfv" eventType="touchUpInside" id="nl5-E3-gBQ"/>
+                                    <action selector="grabImage:" destination="jTA-1K-dfv" eventType="touchUpInside" id="Fha-cq-IAw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -66,13 +65,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="image" destination="Zhb-Ai-DiA" id="uER-NH-qL8"/>
                         <outlet property="label" destination="3Bc-La-8Mk" id="0db-Qj-zPY"/>
+                        <outlet property="mainImage" destination="Zhb-Ai-DiA" id="uER-NH-qL8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yr4-9c-97K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="366.66666666666669" y="-50.223214285714285"/>
+            <point key="canvasLocation" x="455" y="88"/>
         </scene>
     </scenes>
     <resources>
